@@ -14,7 +14,7 @@ position_size = 500  # Maximum position size
 max_utilized_capital = 5000  # Maximum capital to be utilized
 
 # Streamlit web app
-st.title("Healthcare Sector Trading Algorithm Backtesting Result")
+st.title("Bayley's Trading Algorithm for Healthcare Sector")
 
 # Create a function for the trading algorithm
 def run_algorithm(data):
@@ -53,18 +53,40 @@ def run_algorithm(data):
 # Create a button to start the algorithm
 if st.button("Start Algorithm"):
     st.write("Algorithm is running...")
+    st.markdown("<h2 style='color:blue;font-size:24px;'>Backtesting the algorithm on S&P data since September 2022...</h2>", unsafe_allow_html=True)
     positions = run_algorithm(data)
-    st.write("Positions:", positions)
+    st.write("Positions:", pd.DataFrame(positions))
 
 # Create a button to stop the algorithm
-if st.button("Stop Algorithm"):
-    st.write("Algorithm has been stopped.")
+# Define a CSS style to make the button red
+button_style = """
+    <style>
+        .red-button {
+            background-color: red;
+            color: white;
+        }
+    </style>
+"""
+
+# Apply the CSS style to the button
+st.markdown(button_style, unsafe_allow_html=True)
+if st.button("Force-Stop Algorithm", key="force_stop_button", help="This button stops the algorithm"):
+    st.write("Algorithm stopped!")
+    #st.write("Algorithm has been stopped.")
 
 # Display real-time updates (placeholder)
-st.write("Real-time updates go here.")
+
+
+
+
+
+
+st.markdown("<h2 style='color:blue;font-size:24px;'>Updates in Real-time and Performance metrics</h2>", unsafe_allow_html=True)
+
+st.write("Real-time price updates go here:  Waiting for synchronization with a trading account")
 
 # Display performance metrics (placeholder)
-st.write("Performance Metrics:")
+st.write("Performance Metrics: Metrics would be displayed here in real time")
 # Calculate and display maximum drawdown, Sharpe ratio, % gain, etc.
 
 # Display other relevant information as needed
