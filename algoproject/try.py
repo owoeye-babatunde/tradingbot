@@ -42,7 +42,7 @@ def run_algorithm(data):
                 capital -= utilized_capital
                 # Record the position
                 positions.append({
-                    #'StockSymbol': "S&P",
+                    'StockSymbol': "S&P",
                     'Contracts': contracts_to_buy,
                     'EntryPrice': row['Open'],
                     'ExitPrice': row['Close']
