@@ -14,7 +14,7 @@ position_size = 500  # Maximum position size
 max_utilized_capital = 5000  # Maximum capital to be utilized
 
 # Streamlit web app
-st.title("Healthcare Sector Trading Algorithm Backtesting Result: S&P::")
+st.title("Healthcare Sector Trading Algorithm Backtesting Result")
 
 # Create a function for the trading algorithm
 def run_algorithm(data):
